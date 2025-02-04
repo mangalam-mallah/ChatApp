@@ -5,9 +5,9 @@ import { connectDB } from './lib/db.js';
 import authRoutes from './routes/auth.route.js';
 import messageRoutes from './routes/message.routes.js';
 import cors from 'cors';
+import {app, server, io} from './lib/socket.js'
 
 dotenv.config();
-const app = express();
 
 // ✅ Increase request size limit to 10MB
 app.use(express.json({ limit: "10mb" }));
@@ -22,9 +22,9 @@ app.use(cors({
 const PORT = process.env.PORT || 5001;
 
 app.use('/api/auth', authRoutes);
-app.use('/api/message', messageRoutes);
+app.use('/api/messages', messageRoutes);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log("Server is running on port:", PORT);
     connectDB();
 });
