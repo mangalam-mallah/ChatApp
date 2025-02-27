@@ -1,4 +1,4 @@
-# 🔥 Real-Time Chat Application (MERN + Socket.io)
+#  Real-Time Chat Application (MERN + Socket.io)
 
 A **real-time chat application** built using the **MERN stack** (MongoDB, Express.js, React, Node.js) with **Socket.io** for instant messaging. This project focuses on real-time communication, authentication, and efficient state management.
 
